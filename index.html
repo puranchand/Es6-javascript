@@ -1,0 +1,92 @@
+<html>
+ 
+   <head> 
+      <title>Form Validation</title> 
+      <style>
+	.red_abc{
+		width: 300px;
+		float: left; 
+		height: 300px; 
+		background-color: #ff0000;
+	}
+	.blue_abc{
+		width: 300px;
+		height: 300px;
+		background-color: blue;
+		float: left;
+		margin-left: 10px;
+	}
+
+</style>
+      <script type = "text/javascript" language="javascript"> 
+      function clickMe()
+      {
+      	var name = document.myForm.Name.value;
+      	var email = document.myForm.Email.value;
+      	var zip = document.myForm.Zip.value;
+      	var country = document.myForm.Country.value;
+
+        if(name=="") {  
+            alert( "Please provide your name!" );      
+            document.myForm.Name.focus() ;      
+            return false;  
+         }  
+         if( email== "" ) {  
+            alert( "Please provide your Email!" );      
+            document.myForm.EMail.focus() ;      
+            return false; 
+         }  
+         if( zip.value == "" ||            
+         isNaN( zip ) ||            
+         zip.length != 5 ) {  
+            alert( "Please provide a zip in the format." );      
+            document.myForm.Zip.focus() ;      
+            return false;  
+         }  
+         if( country == "-1" ) {  
+            alert( "Please provide your country!" );      
+            return false;  
+         }  
+         return( true );  
+      }  
+      </script> 
+   </head> 
+
+   <body> 
+      <form action = "" name = "myForm" onsubmit = "return(validate());"> 
+         <table cellspacing = "2" cellpadding = "2" border = "1"> 
+            <tr> 
+               <td align = "right">Name</td> 
+               <td><input type = "text" name = "Name" value="" /></td>
+            </tr> 
+            <tr> 
+               <td align = "right">EMail</td> 
+               <td><input type = "text" name = "EMail" value="" /></td> 
+            </tr> 
+            <tr> 
+               <td align = "right">Zip Code</td> 
+               <td><input type = "text" name = "Zip" value="" /></td> 
+            </tr> 
+            <tr> 
+               <td align = "right">Country</td> 
+               <td> 
+                  <select name = "Country"> 
+                     <option value = "-1" selected>[choose yours]</option> 
+                     <option value = "1">USA</option> 
+                     <option value = "2">UK</option> 
+                     <option value = "3">INDIA</option> 
+                  </select> 
+               </td> 
+            </tr> 
+            <tr> 
+               <td align = "right"></td> 
+               <td><input type = "submit" value = "Submit" onclick = "return(clickMe())"/></td> 
+            </tr> 
+         </table> 
+      </form>
+      <br><br><br>
+      <p class="red_abc">;lskfjakdlka</p>
+      <p class="blue_abc">s;lkfjlsfjkghkjhh lkjhl kjhlkjhl kjljh ljhlj hljh lkjhlkjhl</p>
+   </body> 
+   
+</html> 
